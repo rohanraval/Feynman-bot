@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('691869293')
+	res.send(req.query['hub.challenge'])
 })
 
 // for Facebook verification
