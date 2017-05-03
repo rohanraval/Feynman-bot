@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-	if (req.query['hub.verify_token'] === 'hello world') {
+	if (req.query['hub.verify_token'] === 'helloworld') {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
@@ -45,7 +45,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-const token = "EAAGjN69gjpEBAMczkU2lofjOLCPOl2KDev0TpAjwNZBYLZCWARFj47ZBA4f18DHoQwMTiZAvHFe040VkIONZCa3tzavYyOKaMZA2Xar0ZCqygB9GiracabSD6wBTwfCCEd76X3ijshKm3qkfWl2E735Dnho62w3kbMQJQQpOZARl5gZDZD"
+const token = "EAATlzH63U7IBANBr5lmiQHRf72TlAxeZAdFIx5XG9ez74x7ZCnIZBZAxV6qFf0ZBzDLeFYyWP14OXUJMDyXo20QzZCZBcnNQsxrQEnZChY8XUT9COUIhHPXabIRFQfdW6ZBtokFthqGD1lskLPCSm76s09gwJWmEw4eVa2cs35yaC2AZDZD"
 
 // echo message to user
 function sendTextMessage(sender, text) {
