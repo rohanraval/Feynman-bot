@@ -33,13 +33,19 @@ app.listen(app.get('port'), function() {
 
 //API endpoint
 app.post('/webhook/', function (req, res) {
+	quotes = [
+	"For a successful technology, reality must take precedence over public relations, for Nature cannot be fooled.",
+	"Physics is like sex: sure, it may give some practical results, but that's not why we do it.",
+	"What I cannot create, I do not understand."
+	];
+	let quote = quotes[Math.floor(Math.random() * (2))+1]
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
 		    let text = event.message.text
-		    sendTextMessage(sender, "Text received: " + text.substring(0, 200))
+		    sendTextMessage(sender, quote)
 	    }
     }
     res.sendStatus(200)
